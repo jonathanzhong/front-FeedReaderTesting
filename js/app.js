@@ -7,6 +7,7 @@
  */
 
 // The names and URLs to all of the feeds we'd like available.
+var feedContent = [];
 var allFeeds = [
     {
         name: 'Udacity Blog',
@@ -71,6 +72,7 @@ function loadFeed(id, cb) {
              */
             entries.forEach(function(entry) {
                 container.append(entryTemplate(entry));
+                feedContent.push(entryTemplate(entry));
             });
         }
 
