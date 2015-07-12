@@ -127,9 +127,10 @@ $(function() {
                 content0.push(tempElement0[0]);
                 /* Nest loadfeed function inside to avoid race conditions. */
                 loadFeed(1, function() {
-                var tempElement1 = tempElement.find('h2');
-                content1.push(tempElement1[0]);
-                    done();
+                    /* Do the selection again and save new feed to variable. */
+                    var tempElement1 = tempElement.find('h2');
+                    content1.push(tempElement1[0]);
+                        done();
                 });
             })
         });
