@@ -96,7 +96,7 @@ $(function() {
         /* initiate a loadfeed   */
         beforeEach(function(done) {
             /* clear the possible feeds before initiate*/
-            &('body').html();
+            $('body').html();
             loadFeed(0, function() {
                 done();
             });
@@ -117,16 +117,18 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
         */
         var tempElement = $('.feed').find('.entry');
+        var content0 = [],
+        content1 = [];
         beforeEach(function(done) {
             //clear feed 
             tempElement.html('');
-            var content0, content1;
+            
             loadFeed(0, function() {
-                content0 = tempElement[0];
+                content0.push(tempElement[0]);
                 done();
             });
             loadFeed(1, function() {
-                content1 = tempElement[0];
+                content1.push(tempElement[0]);
             })
 
         });
