@@ -7,7 +7,6 @@
  */
 
 // The names and URLs to all of the feeds we'd like available.
-var feedContent = [];
 var allFeeds = [
     {
         name: 'Udacity Blog',
