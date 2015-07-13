@@ -95,7 +95,7 @@ $(function() {
         /* initiate a loadfeed   */
         beforeEach(function(done) {
             /* clear the possible feeds before initiate*/
-            $('.feed').find('.entry').html();
+            $('.feed').empty();
             loadFeed(0, function() {
                 done();
             });
@@ -117,19 +117,19 @@ $(function() {
         * Remember, loadFeed() is asynchronous.
         */
         var tempElement = $('.feed');
-        var content0 = [],
-        content1 = [];
+        var content0 = new String(),
+        content1 = new String();
         beforeEach(function(done) {
             /* clear feed */
             tempElement.empty();
             loadFeed(0, function() {
-                var tempElement0 = tempElement.find('h2');
-                content0.push(tempElement0[0]);
-                /* Nest loadfeed function inside to avoid race conditions. */
+                var tempElement0 = tempElement.find('h2').html();
+                content0 = tempElement0;
+                /* Nested loadfeed function inside to avoid race conditions. */
                 loadFeed(1, function() {
                     /* Do the selection again and save new feed to variable. */
-                    var tempElement1 = tempElement.find('h2');
-                    content1.push(tempElement1[0]);
+                    var tempElement1 = tempElement.find('h2').html();
+                    content1 = tempElement1;
                         done();
                 });
             })

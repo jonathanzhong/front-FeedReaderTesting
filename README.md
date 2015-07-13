@@ -17,3 +17,5 @@ Utilize Jasmine to write test cases toward a web app, and to ensure the function
 - Clone this repo to your local machine.
 - Run index.html, you will find test results about this project.
 
+# Result
+![result](result.png)
