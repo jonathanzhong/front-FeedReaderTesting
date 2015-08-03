@@ -100,7 +100,7 @@ $(function() {
                 done();
             });
         });
-        
+
 
         it('has at least one element', function(done) {
             var tempElement = $('.feed').find('.entry');
@@ -132,7 +132,7 @@ $(function() {
                     content1 = tempElement1;
                         done();
                 });
-            })
+            });
         });
 
 
